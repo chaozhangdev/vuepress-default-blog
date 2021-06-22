@@ -1,0 +1,13 @@
+# tech-blog
+
+> Chao Zhang&#39;s tech blog
+
+## Development
+
+```bash
+yarn dev
+yarn build
+```
+
+For more details, please head VuePress's [documentation](https://v1.vuepress.vuejs.org/).
+

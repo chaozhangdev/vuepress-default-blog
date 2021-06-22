@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'VuePress Blog Example',
+  title: 'Chao Zhang',
   description: 'This is a blog example built by VuePress',
   theme: '@vuepress/theme-blog', // OR shortcut: @vuepress/blog
   themeConfig: {
@@ -20,6 +20,15 @@ module.exports = {
       {
         text: 'Tags',
         link: '/tag/',
+      },
+      {
+        text: 'About',
+        link: '/about/',
+      },
+
+      {
+        text: 'Github',
+        link: 'https://github.com/chaozhangdev',
       },
     ],
     /**
@@ -42,7 +51,7 @@ module.exports = {
           link: 'https://policies.google.com/privacy?hl=en-US',
         },
         {
-          text: 'MIT Licensed | Copyright © 2018-present Vue.js',
+          text: 'MIT Licensed | Copyright © 1994-present Chao Zhang',
           link: '',
         },
       ],

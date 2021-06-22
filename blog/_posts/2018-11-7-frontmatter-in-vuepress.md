@@ -1,6 +1,7 @@
 ---
+title: Get VS Post
 date: 2018-11-7
-tag: 
+tags: 
   - frontmatter
   - vuepress
 author: ULIVZ

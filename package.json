@@ -1,13 +1,13 @@
 {
-  "name": "tech-blog",
+  "name": "blog",
   "version": "0.0.1",
-  "description": "Chao Zhang&#39;s tech blog",
+  "description": "Chao Zhang&#39;s blog",
   "main": "index.js",
   "authors": {
     "name": "Chao Zhang",
     "email": "chaozhangdev@gmail.com"
   },
-  "repository": "/tech-blog",
+  "repository": "/blog",
   "scripts": {
     "start": "vuepress dev blog",
     "dev": "vuepress dev blog",

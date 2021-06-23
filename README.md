@@ -1,6 +1,6 @@
-# tech-blog
+# Blog
 
-> Chao Zhang&#39;s tech blog
+> Chao Zhang&#39;s blog
 
 ## Development
 

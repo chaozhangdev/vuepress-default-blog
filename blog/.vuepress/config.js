@@ -31,7 +31,7 @@ module.exports = {
         path: "/leetcode/",
         itemPermalink: "/en/:year/:month/:day/:slug",
         pagination: { 
-          lengthPerPage: 8,
+          lengthPerPage: 4,
         },
       },
     ],
@@ -61,7 +61,7 @@ module.exports = {
       contact: [
         {
           type: "github",
-          link: "https://github.com/ulivz",
+          link: "https://github.com/chaozhangdev",
         },
         {
           type: "mail",
@@ -69,7 +69,7 @@ module.exports = {
         },
         {
           type: "linkedin",
-          link: "https://twitter.com/_ulivz",
+          link: "https://www.linkedin.com/in/chao-zhang-727b8b15b/",
         },
       ],
       copyright: [

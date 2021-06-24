@@ -45,7 +45,7 @@ In DongKai Fan and Ping Shi (2010) research, they improved storage structure and
 
 Study area in this project is the city of Vancouver. It contains 17013 public streets, 6092 street intersections, 100851 property addresses, 264 parks, 194 schools and 21 libraries and all of these data mentioned are analyzed in the project. For other data such as non city streets, lines, city projects sites, traffic signals and so on are added to consist of the final map but these data are not processed.
 
-![Alt Text](../images/gis/1.png)
+<!-- ![Alt Text](../images/gis/1.png) -->
 
 ## Description of Datasets & Data Preprocessing
 
@@ -53,15 +53,15 @@ This section will outline the table listing of input data sets and attributes of
 
 ### Listing Table of Input Data
 
-![Alt Text](../images/gis/2.png)
+<!-- ![Alt Text](../images/gis/2.png) -->
 
 ### Listing Table of Data for Spatial Analysis
 
-![Alt Text](../images/gis/3.png)
+<!-- ![Alt Text](../images/gis/3.png) -->
 
 ### Listing Table of Attributes for Spatial Analysis
 
-![Alt Text](../images/gis/4.png)
+<!-- ![Alt Text](../images/gis/4.png) -->
 
 ### Data Collecting and Geodatabase Development
 
@@ -77,12 +77,12 @@ This section covers a flowchart of solution, an introduction to created function
 
 ### Flowchart of Solution
 
-![Alt Text](../images/gis/5.png)
-![Alt Text](../images/gis/6.png)
+<!-- ![Alt Text](../images/gis/5.png)
+![Alt Text](../images/gis/6.png) -->
 
 ### List of Created Functions
 
-![Alt Text](../images/gis/7.png)
+<!-- ![Alt Text](../images/gis/7.png) -->
 
 ### Detailed Description of Methods
 
@@ -94,11 +94,11 @@ Step 2: Collect necessary spatial data from input
 
 According to input user address ID, it is efficient to use a search cursor in address shape file and easily get XY coordinate from FID. A part of property_addresses attribute table and function are below:
 
-![Alt Text](../images/gis/8.png)
+<!-- ![Alt Text](../images/gis/8.png) -->
 
 Due to the name domain in park is different from other two so we must use ‘if’ to select feature names. After this process, it can get the nearest place to user address. For example, if the user want to go to nearest park, for every park in our map, it contains its own XY coordinate. A part of of park_polygons attribute table is below:
 
-![Alt Text](../images/gis/9.png)
+<!-- ![Alt Text](../images/gis/9.png) -->
 
 Then a search cursor can be used for every single park to calculate the absolute distance between every park (x1,x2) and user’s home (x2,y2) and then output the nearest one’s XY coordinate and name. For school and library, there are the same as park. So far, we have start point XY coordinate and destination XY coordinate with names.
 
@@ -106,7 +106,7 @@ Step 3: Select region which should be analyzed from the map
 
 This step is to avoid unnecessary processes because it need not always compute all intersections and streets data in Vancouver which may causes few minutes even Topic in GIS & Geoprocessing Final Project Report 15 few hours. Therefore, a selected region should be assigned. For example, there are start point which is the red triangle and end point which is green rectangle in Figure 3. The original region is light red rectangle and processed region is dark rectangle after adding boundary for original region to make sure all intersections which may affect route calculation are covered. The minimum distance for boundary is 600 meters which has been tested for this number covering routes between all addresses and selected places.
 
-![Alt Text](../images/gis/10.png)
+<!-- ![Alt Text](../images/gis/10.png) -->
 
 The next process is to store all intersections in this region into one list and all streets in this region into another list. Because there already exists a list containing all 6970 intersections in data preprocessing, so this process just need to clip some of them from the whole intersections data set into a new list. When it comes to streets storing, it needs some operations to solve maker’s error in public street shape file. The purpose is to connect separated streets into a whole street. Function get_street below can both store streets data and process separated streets connections.
 
@@ -130,11 +130,11 @@ Based on this script, there are some changes have been added and the project fin
 
 This section will illustrate two parts: the map created by ArcMap and results of navigation information for four different tools.
 
-![Alt Text](../images/gis/11.png)
+<!-- ![Alt Text](../images/gis/11.png) -->
 
 The created map contains some of shape files such as public streets, park polygons, schools, libraries and so on in order to illustrate the view of whole city. It also includes some other data like rapid transit line with its stations because it plays an important role in city traffic though they have not been analyzed. For street intersections and property addresses, they are not included in the map because the large number of them may cause the whole map unclear to see and it is unnecessary for users to see these data but they are mainly processed by python scripts to create the navigation toolbox.
 
-![Alt Text](../images/gis/13.png)
+<!-- ![Alt Text](../images/gis/13.png)
 ![Alt Text](../images/gis/14.png)
 ![Alt Text](../images/gis/15.png)
 ![Alt Text](../images/gis/16.png)
@@ -142,7 +142,7 @@ The created map contains some of shape files such as public streets, park polygo
 ![Alt Text](../images/gis/18.png)
 ![Alt Text](../images/gis/19.png)
 ![Alt Text](../images/gis/20.png)
-[Alt Text](../images/gis/21.png)
+[Alt Text](../images/gis/21.png) -->
 
 ## Assumptions and Limitations
 

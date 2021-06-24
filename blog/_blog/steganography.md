@@ -60,7 +60,7 @@ Image processing usually refers to using computer algorithms to perform operatio
 
 For each pixel in an image, it has different sizes and channels. We normally see the general color digital image in computer is 8 bits and has 3 channels which are r, g, b respectively. For 8 bits pixel, its value is from 0 to 255. We call the value gray-scale or gray-level. 0 is the lowest level which is black and 255 is the highest level which is white and it also has 253 different levels between 2 extreme levels shown in Figure 1. For a black and white image, it only have one channel and we can represent it only by different pixels with its gray-scale values. For a color image, it has three channels and we need triple values for that to mix r, g, b together to show different color values.
 
-![Alt Text](../images/steganography/1.png)
+<!-- ![Alt Text](../images/steganography/1.png) -->
 
 ### Operations on pixels
 
@@ -84,7 +84,7 @@ Most steganography applications are used for increasing security such as copyrig
 
 There are many steganography methods nowadays. The classical one is to hide the message into boundaries of the image. For the reason human eye is hard to tell small differences between two images, we can add values of messages into four boundaries of the image, If the length of message is small, this steganography method works well due to its eficiency and simpleness. However, it is not secure because it is so obvious to be checked once values in this image are analyzed. It is weird since values of background are changed only in boundary areas and that may cause the security of message. The other classical method is called least significant bit steganography shown in Figure 2. It obtains binary values of message firstly and divides these binary values into 4 parts then adds each two bits into the end of pixels values in the image. This is a good method but will modify the original a lot which also can be detected. Inspired by some steganography methods, we create a new secure eficient algorithm used in steganography which is discussed in the next part.
 
-![Alt Text](../images/steganography/2.png)
+<!-- ![Alt Text](../images/steganography/2.png) -->
 
 ## New Algorithm
 
@@ -102,15 +102,15 @@ Based on this obtained conclusion, a new idea is that we can change the color of
 
 Figure 3 - The original color:
 
-![Alt Text](../images/steganography/3.png)
+<!-- ![Alt Text](../images/steganography/3.png) -->
 
 Figure 4 - By adding 100:
 
-![Alt Text](../images/steganography/4.png)
+<!-- ![Alt Text](../images/steganography/4.png) -->
 
 Figure 5 - By adding 5:
 
-![Alt Text](../images/steganography/5.png)
+<!-- ![Alt Text](../images/steganography/5.png) -->
 
 ## Implementation
 
@@ -120,9 +120,9 @@ To realize our algorithm, we plan to write source code by python to show both en
 
 Basically, our algorithm for steganography is a symmetric encryption. The structure is shown in Figure 6 where the secret key is the image. We both use the image for encryption and decryption. The pseudo-code is in Algorithm 1 to show some important processes.
 
-![Alt Text](../images/steganography/6.png)
+<!-- ![Alt Text](../images/steganography/6.png)
 
-![Alt Text](../images/steganography/7.png)
+![Alt Text](../images/steganography/7.png) -->
 
 ### Programming Code
 
@@ -148,9 +148,9 @@ In encryption, we divide ASCII values of each character in plaintext into 27 par
 
 By comparing the original image and the ciphered image in Figure 7, we can not distinguish any difference only by human eyes and we may think that ciphered image is the original one. Even for machine, it is hard to detect if the image has been modified because we only change the values of some pixels randomly and sightly. In addition, we only decrease the saturation of some pixels to a very small level without changing hue. Figure 8 confirms programming works well which can exactly recover the plaintext from the ciphered image.
 
-![Alt Text](../images/steganography/8.png)
+<!-- ![Alt Text](../images/steganography/8.png)
 
-![Alt Text](../images/steganography/9.png)
+![Alt Text](../images/steganography/9.png) -->
 
 ## Conclusion
 

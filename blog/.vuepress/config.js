@@ -31,7 +31,7 @@ module.exports = {
         path: "/leetcode/",
         itemPermalink: "/en/:year/:month/:day/:slug",
         pagination: { 
-          lengthPerPage: 4,
+          lengthPerPage: 8,
         },
       },
     ],

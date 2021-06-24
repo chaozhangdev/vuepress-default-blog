@@ -168,7 +168,7 @@ Indentification System:
 The identification algorithm is based on MFCC statistical moments and SVM classifiers. The general voice disguise identification system consists of a training stage and a testing stage as shown in Fig.3.
 
 Fig. 3: General identification system of disguised voices.
-<!-- ![Alt Text](../images/computer-audio/3.png) -->
+![Alt Text](../.vuepress/images/computer-audio/1.png)
 
 In the training stage, firstly we have orignal voice set and disguised voice set with N different semitones. Then we extract training features of each through training to N SVM classifiers for testing to determine the disguise result for each classifier.
 

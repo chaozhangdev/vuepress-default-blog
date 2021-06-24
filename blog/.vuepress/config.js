@@ -8,7 +8,7 @@ module.exports = {
   themeConfig: {
     smoothScroll: true,
     sitemap: {
-      hostname: "",
+      hostname: "https://www.chao.gg",
     },
     // modifyBlogPluginOptions(blogPluginOptions) {
     //   return blogPluginOptions;

@@ -3,7 +3,7 @@
 
 module.exports = {
   title: "Chao Zhang",
-  description: "This is a blog to record my daily life. Built by VuePress.",
+  description: "This is a blog to record my daily study in coding. Built by VuePress.",
   theme: "@vuepress/theme-blog", // OR shortcut: @vuepress/blog
   themeConfig: {
     smoothScroll: true,
@@ -25,6 +25,16 @@ module.exports = {
         },
       },
       {
+        id: "research",
+        dirname: "_research",
+        title: "Research",
+        path: "/research/",
+        itemPermalink: "/en/:year/:month/:day/:slug",
+        pagination: { 
+          lengthPerPage: 9999,
+        },
+      },
+      {
         id: "leetcode",
         dirname: "_leetcode",
         title: "Leetcode",
@@ -39,6 +49,10 @@ module.exports = {
       {
         text: "Blog",
         link: "/",
+      },
+      {
+        text: "Research",
+        link: "/research/",
       },
       {
         text: "Leetcode",

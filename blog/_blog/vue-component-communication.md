@@ -10,8 +10,6 @@ author: Chao Zhang
 location: Vancouver
 ---
 
-There are 5 common methods I used in developing vue projects. I would like to classify and explain them in this blog.
-
 ## 1. `props` / `$emit`
 
 The parent component passes data to the child component through `props`, and the child component can communicate to the parent component through `$emit`.
@@ -132,10 +130,170 @@ export default {
 
 ## 2. `$children` / `$parent`
 
+```vue
+// parent component
+<template>
+  <div class="hello_world">
+    <div>{{ msg }}</div>
+    <com-a></com-a>
+    <button @click="changeA">change child's value</button>
+  </div>
+</template>
+
+<script>
+import ComA from "./test/comA.vue";
+export default {
+  name: "HelloWorld",
+  components: { ComA },
+  data() {
+    return {
+      msg: "Welcome",
+    };
+  },
+  methods: {
+    changeA() {
+      // get child component A
+      this.$children[0].messageA = "this is new value";
+    },
+  },
+};
+</script>
+```
+
+```vue
+// child component
+<template>
+  <div class="com_a">
+    <span>{{ messageA }}</span>
+    <p>Parent component's value: {{ parentVal }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      messageA: "this is old",
+    };
+  },
+  computed: {
+    parentVal() {
+      return this.$parent.msg;
+    },
+  },
+};
+</script>
+```
+
+> Pay attention to the boundary conditions, such as taking `$parent` on `#app` to get an instance of `new Vue()`, taking `$parent` on this instance to get `undefined`, and taking `$children` on the bottom of the child component is an empty array. Also note that the values of `$parent` and `$children` are not the same, the value of `$children` is an array, and `$parent` is an object
+
+Conclusion: The above two methods are used for communication between parent and child components, and it is more common to use props to communicate between parent and child components; neither of them can be used for communication between non-parent and child components.
+
 ## 3. eventBus
 
-## 4. localStorage / sessionStorage
+eventBus is also known as event bus. It can be used as a concept of communication bridge in vue, just like all components share the same event center, which can be registered to send events or receive events, so components can notify other components.
+
+> EventBus also has inconveniences. When the project is large, it is easy to cause disasters that are difficult to maintain.
+
+Few steps to use eventBus to achieve data communication between components:
+
+### 1. Initialization
+
+Create an event bus and export it so that other modules can use or monitor it.
+
+```vue
+import Vue from 'vue'; export const EventBus = new Vue();
+```
+
+### 2. Send Event
+
+Suppose you have two components: additionNum and showNum, these two components can be sibling components or parent-child components; here we take sibling components as an example:
+
+```vue
+<template>
+  <div>
+    <show-num-com></show-num-com>
+    <addition-num-com></addition-num-com>
+  </div>
+</template>
+
+<script>
+import showNumCom from "./showNum.vue";
+import additionNumCom from "./additionNum.vue";
+export default {
+  components: { showNumCom, additionNumCom },
+};
+</script>
+```
+
+```vue
+// addtionNum.vue : send event
+<template>
+  <div>
+    <button @click="additionHandle">+ Add</button>
+  </div>
+</template>
+
+<script>
+import { EventBus } from "./event-bus.js";
+export default {
+  data() {
+    return {
+      num: 1,
+    };
+  },
+  methods: {
+    additionHandle() {
+      EventBus.$emit("addition", {
+        num: this.num++,
+      });
+    },
+  },
+};
+</script>
+```
+
+### 3. Receive Event
+
+In this way, click the add button in the component addtionNum.vue, and use the passed num in showNum.vue to display the result of the summation.
+
+```vue
+// showNum.vue : receive event
+
+<template>
+  <div>Sum: {{ count }}</div>
+</template>
+
+<script>
+import { EventBus } from "./event-bus.js";
+export default {
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  mounted() {
+    EventBus.$on("addition", (param) => {
+      this.count = this.count + param.num;
+    });
+  },
+};
+</script>
+```
+
+### 4. Remove Event Listener
+
+```vue
+import { eventBus } from 'event-bus.js'; EventBus.$off('addition', {});
+```
+
+## 4. `localStorage` / `sessionStorage`
+
+It is relatively simple to use, but the disadvantage is that the data and status are messy and not easy to maintain. Get data through `window.localStorage.getItem(key)` and store data through `window.localStorage.setItem(key, value)`
+
+>Note that using `JSON.parse()` / `JSON.stringify()` for data format conversion `localStorage` / `sessionStorage` can be combined with vuex to achieve persistent storage of data, while using vuex to solve the problem of data and state confusion.
 
 ## 5. VueX
 
-[...](https://juejin.cn/post/6844903887162310669)
+Please see [this blog]('../vuex-explanation.md') for detailed explination of VueX.
+

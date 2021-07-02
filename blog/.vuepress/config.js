@@ -1,14 +1,15 @@
-// Documentation: https://vuepress-theme-blog.ulivz.com/config/ 
+// Documentation: https://vuepress-theme-blog.ulivz.com/config/
 // Demo Blog Code: https://github.com/billyyyyy3320/Billy
 
 module.exports = {
   title: "Chao Zhang",
-  description: "This is a blog to record my daily study in coding. Built by VuePress.",
+  description:
+    "This is a blog to record my daily study of coding. Built by VuePress.",
   theme: "@vuepress/theme-blog", // OR shortcut: @vuepress/blog
   themeConfig: {
     smoothScroll: true,
     sitemap: {
-      hostname: "https://www.chao.gg",
+      hostname: "https://chao.gg",
     },
     // modifyBlogPluginOptions(blogPluginOptions) {
     //   return blogPluginOptions;
@@ -20,18 +21,8 @@ module.exports = {
         title: "Blog",
         path: "/",
         itemPermalink: "/en/:year/:month/:day/:slug",
-        pagination: { 
+        pagination: {
           lengthPerPage: 8,
-        },
-      },
-      {
-        id: "research",
-        dirname: "_research",
-        title: "Research",
-        path: "/research/",
-        itemPermalink: "/en/:year/:month/:day/:slug",
-        pagination: { 
-          lengthPerPage: 9999,
         },
       },
       {
@@ -40,8 +31,28 @@ module.exports = {
         title: "Leetcode",
         path: "/leetcode/",
         itemPermalink: "/en/:year/:month/:day/:slug",
-        pagination: { 
+        pagination: {
           lengthPerPage: 8,
+        },
+      },
+      // {
+      //   id: "project",
+      //   dirname: "_project",
+      //   title: "Project",
+      //   path: "/project/",
+      //   itemPermalink: "/en/:year/:month/:day/:slug",
+      //   pagination: {
+      //     lengthPerPage: 8888,
+      //   },
+      // },
+      {
+        id: "research",
+        dirname: "_research",
+        title: "Research",
+        path: "/research/",
+        itemPermalink: "/en/:year/:month/:day/:slug",
+        pagination: {
+          lengthPerPage: 8888,
         },
       },
     ],
@@ -50,6 +61,10 @@ module.exports = {
         text: "Blog",
         link: "/",
       },
+      // {
+      //   text: "Project",
+      //   link: "/project/",
+      // },
       {
         text: "Research",
         link: "/research/",

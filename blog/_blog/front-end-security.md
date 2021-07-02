@@ -1,6 +1,6 @@
 ---
 title: Front End Security - Questions & Solutions
-date: 2020-06-28
+date: 2021-06-28
 tags:
   - Security
   - Front End
@@ -104,4 +104,3 @@ Solutions:
 - Don't store important data locally. Do not store sensitive and confidential information locally.
 
 - Encryption: All the information in the cookie or localStorage should be encrypted. For encryption, you can define some encryption methods yourself or find some encrypted plug-ins on the Internet, or use base64 to encrypt multiple times and then decode multiple times.
-

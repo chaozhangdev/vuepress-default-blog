@@ -1,6 +1,6 @@
 ---
 title: VueX - An Easy-To-Understand Explanation
-date: 2020-06-30
+date: 2021-06-30
 tags:
   - VUE
   - VUEX

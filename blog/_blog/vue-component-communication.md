@@ -1,6 +1,6 @@
 ---
 title: 5 Common Methods in VUE Component Communication
-date: 2020-06-29
+date: 2021-06-29
 tags:
   - VUE
   - SPA
@@ -291,9 +291,8 @@ import { eventBus } from 'event-bus.js'; EventBus.$off('addition', {});
 
 It is relatively simple to use, but the disadvantage is that the data and status are messy and not easy to maintain. Get data through `window.localStorage.getItem(key)` and store data through `window.localStorage.setItem(key, value)`
 
->Note that using `JSON.parse()` / `JSON.stringify()` for data format conversion `localStorage` / `sessionStorage` can be combined with vuex to achieve persistent storage of data, while using vuex to solve the problem of data and state confusion.
+> Note that using `JSON.parse()` / `JSON.stringify()` for data format conversion `localStorage` / `sessionStorage` can be combined with vuex to achieve persistent storage of data, while using vuex to solve the problem of data and state confusion.
 
 ## 5. VueX
 
 Please see [this blog]('../vuex-explanation.md') for detailed explination of VueX.
-

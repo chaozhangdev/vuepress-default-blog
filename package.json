@@ -9,6 +9,7 @@
   },
   "repository": "/blog",
   "scripts": {
+    "start": "vuepress dev blog",
     "dev": "vuepress dev blog",
     "build": "vuepress build blog"
   },
